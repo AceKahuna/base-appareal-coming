@@ -13,10 +13,8 @@ form.addEventListener('submit' , (e)=>{
 function checkInputs(){
     const emailValue  =email.value.trim();
 
-
     if (emailValue == ' ' || ""){
         //show error
         //add error class
-        set
     }
 }

@@ -12,11 +12,15 @@
     <div class="container">
         <!-- logo section -->
         <div class="logo">
-            <img src="/images/logo.svg" alt="Base Apparel">
+            <img src="/images/logo.svg" alt="Base Apparel" >
         </div>
 
         <div class="image">
+            <picture>
+            <source  media="(max-width: 40em)" type="image/jpg" srcset=" /images/hero-mobile.jpg 1x">
+             <source  media="(max-width: 20em)" type="image/jpg" srcset=" /images/hero-mobile.jpg 2x">         
             <img src="/images/hero-desktop.jpg" alt="A Beautiful lady">
+            </picture>
         </div>
 
         <div class="info">
@@ -29,13 +33,11 @@
                 </p>
 
                 <form action="/" id="form">
-                    <input type="email" name="email" id="email" placeholder="Email Address" required>
-                    <button id="submit">
+                    <input type="email" name="email" id="email" placeholder="Email Address" required><button id="submit">
                         <img src="/images/icon-arrow.svg" alt="submit">
                     </button>
                     <img src="images/icon-error.svg" alt="error" id=error>
                     <small id="errorMessage">Please provide a valid email</small>
-
                 </form>
         </div>
 

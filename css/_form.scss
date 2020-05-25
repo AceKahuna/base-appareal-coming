@@ -1,5 +1,13 @@
 
 form{  
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    input{
+        border: none;
+    }
+
     #email{
         border: 1px solid ;
         border-radius: 50px;
@@ -8,6 +16,14 @@ form{
         padding: 20px;
         color: $primarycolor;
         cursor: pointer;
+
+        &:focus{
+            outline: 0;
+        }
+
+        @include responsive (phone){
+            width:100%;
+        }
     }
 
     &::placeholder{
@@ -17,20 +33,32 @@ form{
 
     button{
         padding: 10px;
-        margin-top: 30px;
-        border-radius: 50px;
+        margin-left: -110px;
+        height: 55px;
         width: 100px;
-        border: none;
+        border-radius: 50px;
+        border: 0;
         background: $primarycolor2;
         background:  $gradient2;
         cursor: pointer;
+
+        &:focus{
+            outline: none;
+        }
+
+        &:hover{
+            margin-left: -60px;
+            background: $primarycolor2;
+            background: $gradient2;
+        }
     }
     #error{
-        visibility: hidden;
+        display: none;
+        margin-left: -150px;
     }
 
     small{
-        visibility: hidden;
+        display: none;
         margin-top: 20px;
         color: $primarycolor2;
     }
