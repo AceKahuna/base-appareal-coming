@@ -2,19 +2,32 @@ const form = document.getElementById("form");
 const email = document.getElementById("email");
 const error= document.getElementById("error");
 const submit = document.getElementById("submit");
-const errorMessage= document.getElementById("errorMessage");
 
 
-form.addEventListener('submit' , (e)=>{
-    e.preventDefault();
-    checkInputs();
+form.addEventListener('submit' , (event)=>{
+    event.preventDefault();
+    validateEmail();
+    errormsg();
 });
 
-function checkInputs(){
-    const emailValue  =email.value.trim();
+function validateEmail(){   
+    const emailValue  = email.value.trim();
 
-    if (emailValue == ' ' || ""){
-        //show error
-        //add error class
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailValue)) {
+        return true;
+    } else{
+        return false; 
+        const errormsg = document.querySelector('.msg')
+
+        errormsg.classList.add("errorMessage")
+
+
+
     }
+    
 }
+
+
+
+
+

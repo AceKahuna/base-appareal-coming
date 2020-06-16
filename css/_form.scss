@@ -1,8 +1,9 @@
 
 form{  
-    display: flex;
-    justify-content: left;
-    align-items: center;
+    .form-control{
+        position: relative;
+        display: block;
+    }
 
     input{
         border: none;
@@ -32,6 +33,7 @@ form{
     }
 
     button{
+        // position: relative;
         padding: 10px;
         margin-left: -110px;
         height: 55px;
@@ -52,14 +54,28 @@ form{
             background: $gradient2;
         }
     }
-    #error{
+
+    .icon{
         display: none;
-        margin-left: -150px;
     }
+    
 
     small{
         display: none;
-        margin-top: 20px;
+    }
+
+
+    .ierror{
+        display: inline;
+        position: absolute;
+        display: inline-block;
+        margin-left: -150px;
+        top: 25px;
+    }   
+
+    .errorMessage{
+        display: block;
+        padding: 10px;
         color: $primarycolor2;
     }
 }

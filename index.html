@@ -33,11 +33,14 @@
                 </p>
 
                 <form action="/" id="form">
-                    <input type="email" name="email" id="email" placeholder="Email Address" required><button id="submit">
+                    <div class="form-control">
+                    <input type="email" name="email" id="email" placeholder="Email Address">
+                    <button id="submit">
                         <img src="/images/icon-arrow.svg" alt="submit">
                     </button>
-                    <img src="images/icon-error.svg" alt="error" id=error>
-                    <small id="errorMessage">Please provide a valid email</small>
+                    <img src="images/icon-error.svg" alt="error" class="icon">
+                    <small class="msg">Please provide a valid email</small>
+                </div>
                 </form>
         </div>
 

@@ -38,13 +38,10 @@ p {
     max-width: 100%;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto;
-        grid-template-columns: auto;
-    -ms-grid-rows: auto auto auto auto;
-        grid-template-rows: auto auto auto auto;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 100px 250px auto auto;
+        grid-template-rows: 100px 250px auto auto;
   }
 }
 
@@ -81,8 +78,8 @@ p {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
-    -o-object-fit: cover;
-       object-fit: cover;
+    -o-object-fit: fill;
+       object-fit: fill;
   }
 }
 
@@ -194,16 +191,9 @@ p {
   color: #f96262;
 }
 
-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+form .form-control {
+  position: relative;
+  display: block;
 }
 
 form input {
@@ -272,13 +262,24 @@ form button:hover {
   background: Linear(135deg, from #f8bfbf, to #ee8c8c);
 }
 
-form #error {
+form .icon {
   display: none;
-  margin-left: -150px;
 }
 
 form small {
   display: none;
-  margin-top: 20px;
+}
+
+form .ierror {
+  display: inline;
+  position: absolute;
+  display: inline-block;
+  margin-left: -150px;
+  top: 25px;
+}
+
+form .errorMessage {
+  display: block;
+  padding: 10px;
   color: #f96262;
 }
