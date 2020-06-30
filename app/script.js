@@ -1,30 +1,28 @@
 const form = document.getElementById("form");
 const email = document.getElementById("email");
-const error= document.getElementById("error");
-const submit = document.getElementById("submit");
+const msg = document.querySelector(".msg");
+const errorIcon = document.querySelector(".icon");
 
-
-form.addEventListener('submit' , (event)=>{
+form.addEventListener('submit', (event) => { 
     event.preventDefault();
     validateEmail();
-    errormsg();
+    submit();
 });
 
-function validateEmail(){   
-    const emailValue  = email.value.trim();
+//validate email
+const validateEmail = () => {
+    let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailValue)) {
+    if(email.value === mailFormat){
         return true;
+        email.value = ' ';   
     } else{
-        return false; 
-        const errormsg = document.querySelector('.msg')
-
-        errormsg.classList.add("errorMessage")
-
-
-
+        errorIcon.classList.remove('icon');
+        errorIcon.classList.add('ierror');
+        msg.classList.remove('msg');
+        msg.classList.add('errorMessage');
+        return false;
     }
-    
 }
 
 

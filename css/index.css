@@ -192,8 +192,7 @@ p {
 }
 
 form .form-control {
-  position: relative;
-  display: block;
+  display: inline-block;
 }
 
 form input {
@@ -203,7 +202,7 @@ form input {
 form #email {
   border: 1px solid;
   border-radius: 50px;
-  width: 70%;
+  width: 30vw;
   margin: 10px;
   padding: 20px;
   color: #ce9797;
@@ -241,6 +240,7 @@ form::placeholder {
 }
 
 form button {
+  position: relative;
   padding: 10px;
   margin-left: -110px;
   height: 55px;
@@ -270,9 +270,11 @@ form small {
   display: none;
 }
 
+form .email-error {
+  border: 2px solid #f96262;
+}
+
 form .ierror {
-  display: inline;
-  position: absolute;
   display: inline-block;
   margin-left: -150px;
   top: 25px;
@@ -283,3 +285,4 @@ form .errorMessage {
   padding: 10px;
   color: #f96262;
 }
+/*# sourceMappingURL=index.css.map */
