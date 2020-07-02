@@ -6,26 +6,26 @@ const errorIcon = document.querySelector(".icon");
 form.addEventListener('submit', (event) => { 
     event.preventDefault();
     validateEmail();
-    submit();
 });
+ 
+// email format validation
+const checkMail = (email) =>{
+    let mailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return mailFormat.test((email).toLowerCase());
+}
 
 //validate email
 const validateEmail = () => {
-    let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-    if(email.value === mailFormat){
-        return true;
-        email.value = ' ';   
-    } else{
+    if(!checkMail(email.value)){
         errorIcon.classList.remove('icon');
         errorIcon.classList.add('ierror');
         msg.classList.remove('msg');
         msg.classList.add('errorMessage');
-        return false;
+    } else{
+        email.value = ' '; 
+        errorIcon.classList.add('icon');
+        errorIcon.classList.remove('ierror');
+        msg.classList.add('msg');
+        msg.classList.remove('errorMessage');
     }
 }
-
-
-
-
-
