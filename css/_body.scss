@@ -135,13 +135,13 @@ p{
         @include responsive(tab-land){
             max-width: 100%;
         }
-        
+
         @include responsive(big-desktop){
             max-width: 100%;
         }
 
         h1{
-            font-size: 5.5rem;
+            font-size: 4rem;
             text-transform: uppercase;
             font-weight: 600;
             letter-spacing: 1.2rem;
@@ -172,6 +172,7 @@ p{
             }
 
             @include responsive(tab-port){
+                font-size: 20px;
                 text-align: center;
                 padding: 20px;
             }

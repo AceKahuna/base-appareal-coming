@@ -217,7 +217,7 @@ p {
 }
 
 .container .info h1 {
-  font-size: 5.5rem;
+  font-size: 4rem;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1.2rem;
@@ -257,6 +257,7 @@ p {
 
 @media only screen and (max-width: 900px) {
   .container .info p {
+    font-size: 20px;
     text-align: center;
     padding: 20px;
   }
