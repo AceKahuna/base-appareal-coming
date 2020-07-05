@@ -1,7 +1,8 @@
 const form = document.getElementById("form");
-const email = document.getElementById("email");
+const email = document.querySelector("#email");
 const msg = document.querySelector(".msg");
 const errorIcon = document.querySelector(".icon");
+const root = document.documentElement;
 
 form.addEventListener('submit', (event) => { 
     event.preventDefault();
@@ -17,12 +18,14 @@ const checkMail = (email) =>{
 //validate email
 const validateEmail = () => {
     if(!checkMail(email.value)){
+        root.style.setProperty('--border', '2px solid hsl(0, 93%, 68%)');
         errorIcon.classList.remove('icon');
         errorIcon.classList.add('ierror');
         msg.classList.remove('msg');
         msg.classList.add('errorMessage');
     } else{
         email.value = ' '; 
+        root.style.setProperty('--border', '1px solid');
         errorIcon.classList.add('icon');
         errorIcon.classList.remove('ierror');
         msg.classList.add('msg');
